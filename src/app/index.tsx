@@ -13,9 +13,7 @@ const handlePress = () => {
 export default function App() {
     return (
         <View style={style.container}>
-
             <AppBar
-
                 titulo='SCEF MOBILE'
                 menu
                 buttonone={{

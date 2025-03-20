@@ -25,6 +25,7 @@ interface AppbarProps {
     buttonone?: AppBarButton; // O botão deve seguir a interface AppBarButton
     buttonTwo?: AppBarButton;
     buttonthree?: AppBarButton;
+    onBack?: any;
 }
 
 interface AppBarButton {
@@ -36,6 +37,7 @@ interface AppBarButton {
 export const AppBar: React.FC<AppbarProps> = ({
     titulo,
     menu,
+    onBack,
     buttonone,
     buttonTwo,
     buttonthree
@@ -47,7 +49,11 @@ export const AppBar: React.FC<AppbarProps> = ({
                     <View style={styles.titleButton}>
                         <MenuButton />
                     </View>
-                ) : null}
+                ) : (
+                    <View style={styles.titleButton}>
+                        <BackButton targetScreen={onBack} />
+                    </View>
+                )}
                 <Text style={styles.titulo}>{titulo}</Text>
             </View>
 
